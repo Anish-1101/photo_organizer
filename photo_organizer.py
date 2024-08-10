@@ -14,9 +14,9 @@ import datetime
 #   2   filter for image
 #   4   extract modification date 
 #   5   organize images based on date for these small subdirectories   
-#       sort by month
-#   6   handle duplicates
-#   7 copy them all over and create file directory based off month and year
+#   6   sort by month
+#   7   handle duplicates
+#   8   copy them all over and create file directory based off month and year
 
 
 image_extensions = {'.jpg', '.jpeg', '.png', '.gif', '.bmp', '.tiff', '.heic'}
@@ -60,9 +60,8 @@ def create_dir(path):
 
 
 def main(source):
-    cwd = os.getcwd()  #cwd = current working directory
+    cwd = os.getcwd()  #current working directory
     source_path = os.path.join(cwd, source) # got the source path
-  #  target_path = os.path.join(cwd, target) # got the directory path
 
     image_paths = find_all_images(source_path) # now have all image paths
     groupofimages = group_images_by_date(image_paths)
